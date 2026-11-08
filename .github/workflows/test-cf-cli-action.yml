@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         
       - name: Setup CF CLI (latest)
         uses: .//.github/actions/setup-cf-cli
@@ -45,7 +45,7 @@ jobs:
           - { version: '8.7.10', name: 'specific' }
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         
       - name: Setup CF CLI (${{ matrix.test_case.name }})
         id: cf-setup
@@ -80,7 +80,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         
       - name: First CF CLI setup (should download)
         id: cf-setup-first
@@ -113,7 +113,7 @@ jobs:
     if: github.event_name == 'workflow_dispatch'
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         
       - name: Setup CF CLI with input version
         id: cf-setup-input
